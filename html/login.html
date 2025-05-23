@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <script type="module">
+    import { setupAuthUI } from "../js/auth.js";
+    window.addEventListener("DOMContentLoaded", setupAuthUI);
+  </script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo"><img src="../img/logo.svg" alt="logo" height="40"/></a>
+      <div class="nav-links">
+        <a class="nav-button" href="/">Home</a>
+        <a class="nav-button" href="rps.html">Play</a>
+      </div>
+    </div>
+  </header>
+  <main class="container">
+    <h1>Sign In</h1>
+    <div>
+      <p id="user-display">Not signed in</p>
+      <button id="logout-btn" style="display:none;">Sign Out</button>
+    </div>
+
+    <section>
+      <h2>Login</h2>
+      <form id="login-form">
+        <input type="email" name="email" placeholder="Email" required /><br/>
+        <input type="password" name="password" placeholder="Password" required /><br/>
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Sign Up</h2>
+      <form id="signup-form">
+        <input type="email" name="email" placeholder="Email" required /><br/>
+        <input type="password" name="password" placeholder="Password" required /><br/>
+        <button type="submit">Create Account</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
