@@ -4,11 +4,11 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-aut
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCmOR_PR6YBW790ku-9FBfWwsAyXOsRTDE",
+  apiKey: "",
   authDomain: "games.firebaseapp.com",
-  projectId: "games-c2238",
+  projectId: "",
   storageBucket: "games.appspot.com",
-  messagingSenderId: "904536644588",
+  messagingSenderId: "",
   appId: "APP_ID"
 };
 
