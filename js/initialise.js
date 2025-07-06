@@ -2,21 +2,22 @@ import { signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.0/fi
 import { auth } from './firebase-config.js';
 import { submitScore, getTopScores } from './firebase-leaderboard.js';
 
-// Sign in anonymously
+// Sign in anonymously to Firebase
 signInAnonymously(auth)
   .then(() => {
-    console.log("Signed in anonymously");
+    console.log("✅ Signed in anonymously");
 
-    // Optional: test leaderboard
-    submitScore("TestPlayer", Math.floor(Math.random() * 1000));
+    // Submit a test score (for "classic" mode)
+    submitScore("classic", "TestPlayer", Math.floor(Math.random() * 1000));
 
-    getTopScores(5).then(scores => {
-      console.log("Top 5 Scores:");
+    // Fetch and log the top 5 scores from "classic" leaderboard
+    getTopScores("classic", 5).then(scores => {
+      console.log("🏆 Top 5 Scores:");
       scores.forEach((entry, index) => {
-        console.log(`#${index + 1} ${entry.player}: ${entry.score}`);
+        console.log(`#${index + 1}: ${entry.player} — ${entry.score}`);
       });
     });
   })
   .catch((error) => {
-    console.error("Sign-in failed:", error);
+    console.error("❌ Sign-in failed:", error);
   });
